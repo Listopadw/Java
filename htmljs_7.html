@@ -55,53 +55,12 @@
     </footer>
     <script src="js\scripts.js"></script>
     <script>
-        let infoPatient=["Иванов","Иван","Иванович", 15, "мая", 1974, "м"];
-        console.log(infoPatient);
-        console.log(infoPatient[0]);
-        console.log(infoPatient[5]);
-        /*
-        let lastname;
-        lastname=prompt("Введите фамилию пациента", lastname);
-        console.log(lastname);
-        infoPatient[0]= lastname;
-        console.log(infoPatient);
-        let firstname;
-        firstname=prompt("Введите имя пациента", firstname);
-        console.log(firstname);
-        infoPatient[1]=firstname;
-        console.log(infoPatient);
-        let middlename;
-        middlename=prompt("Введите отвечство пациента", middlename);
-        console.log(middlename);
-        infoPatient[2]=middlename;
-        console.log(infoPatient);
-        let date;
-        date=prompt("Введите день рождения пациента", date);
-        console.log(date);
-        infoPatient[3]=date;
-        console.log(infoPatient);
-        let month;
-        month=prompt("Введите месяц рождения пациента", month);
-        console.log(month);
-        infoPatient[4]=month;
-        console.log(infoPatient);
-        let year;
-        year=prompt("Введите год рождения пациента", year);
-        console.log(year);
-        infoPatient[5]=year;
-        console.log(infoPatient);
-        let gender;
-        gender=prompt("Укажите пол пациента", gender);
-        console.log(gender);
-        infoPatient[6]=gender;
-        console.log(infoPatient);
-        */
        var person = {
-        "SNILS 1": ["Иванов", "Иван", "Иванович", 15, "мая", 1974,"м"],
-        "SNILS 2": ["Сидоров", "Сидор", "Сидорович", 20, "мая", 1980,"м"],
-        "SNILS 3": ["Петрова", "Петров", "Петрович", 1, "июня", 1975,"ж"],
-       }
-       console.log(person);
+        "SNILS 1": ["Иванов", "Иван", "Иванович", 15, "мая", 1974,"м","исполнено"],
+        "SNILS 2": ["Сидоров", "Сидор", "Сидорович", 20, "мая", 1980,"м","медотвод"],
+        "SNILS 3": ["Петров", "Петров", "Петрович", 1, "июня", 1975,"ж","назначено"],
+       };
+       /*console.log(person);
        SNILS4="SNILS 4"
        let lastname;
         lastname=prompt("Введите фамилию пациента", lastname);
@@ -136,10 +95,34 @@
         let gender;
         gender=prompt("Укажите пол пациента", gender);
         //console.log(gender);
-        infoPatient[1]=gender;
+        infoPatient[6]=gender;
         console.log(infoPatient);
        person.SNILS4=infoPatient;
-       console.log(person);
+       console.log(person);*/
+       //Получаем информацию о пациенте по SNILS
+       let SNILS;  
+       SNILS=prompt("Введите SNILS пациента", SNILS);
+       infoname=person[SNILS]
+       console.log(infoname);
+       alert("Информация о пациенте"+infoname);
+       statusPriv = person[SNILS][7];
+       console.log(statusPriv);
+       /*let phase;
+       phase=prompt("Введите действие или метотвод или назначено или исполнено", phase);
+       infoname.push(phase);
+       console.log(infoname);
+       person[SNILS]=infoname;
+       console.log(person);*/
+       //Извлекаем информацию о текцщем статусе прививки
+       var SecondFunction = function(statusPriv,infoname){
+       //Проверяем возможность изменения статуса
+       if (statusPriv === "исполнено") {
+        alert("Отказано в прививке пациенту" + infoname);
+       } else if (statusPriv === "медотвод") {
+        alert("Отказано в прививке пациенту" + infoname);
+       } else {
+        alert("Испольнить прививку пациенту" + infoname);
+       }
     </script>
 </body>
 
